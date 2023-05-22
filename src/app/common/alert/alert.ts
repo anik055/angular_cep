@@ -1,15 +1,13 @@
 
 import { Injectable, OnInit } from '@angular/core';
+import { CSInterface } from '@cep/csinterface';
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class AlertService{
-
-     
-
-  
+  csInterface = new CSInterface();
   constructor() {
   }
 
