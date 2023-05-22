@@ -1,0 +1,6 @@
+<section class="wrapper">
+  <div class="sls-container">
+    <app-landing [leagues] = "leagues" *ngIf = "!isCreate" (valueChanged)="onValueChanged($event)" (leagueChanged)="onLeaguesChange($event)" ></app-landing>
+    <app-create-license [leagues] = "checkedLeagues(leagues)" *ngIf = "isCreate"></app-create-license> 
+  </div>
+</section>

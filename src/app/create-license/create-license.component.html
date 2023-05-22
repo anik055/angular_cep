@@ -1,0 +1,142 @@
+<div class="inner-wrap">
+    <!-- <ul class="custom-tabs">
+      <li>
+        <a href="javascript:;">Licensing</a>
+      </li>
+    </ul> -->
+    <div class="tabs-body">
+      <div class="licensing">
+        <div class="form-group">
+          <label>SKU: </label>
+          <input [(ngModel)]="sharedService.sharedVariable" type="text" class="form-control" />
+          <i class="info-icon">i</i>
+        </div>
+        <div class="form-group">
+          <label class="nowrap">Prefill template:</label>
+          <select (change)="prefillChange($event.target)" class="d-block">
+            <option>Choose product template</option>
+            <option  *ngFor="let item of prefillDetails" [value]="item.product">{{item.property}}</option>
+            <!-- <option>Prefill template 2</option>
+            <option>Prefill template 3</option> -->
+          </select>
+        </div>
+      </div>
+      <div class="leagues-option">
+        <button *ngFor="let item of leagues" (change) = "handleLeagueChange(item)" class="btn-radio">
+          <input type="radio" class="radio-type" name="leagues" id="leagues" [value]="item.name" [(ngModel)]="selectedOption" />
+          <label class="radio-label">{{item.name}}</label>
+        </button>
+      </div>
+      <div class="meta-data">
+        <div class="metadata-action">
+          <a href="javascript:;" class="caret">Licensing Meta Data</a>
+          <a href="javascript:;" class="edit">Edit</a>
+        </div>
+        <div class="bodered-box scroll">
+          <div class="column">
+            <div class="form-group">
+              <label>Property:</label>
+              <input [(ngModel)]="selectedPrefill.property"  type="text" class="form-control" />
+            </div>
+            <div class="form-group">
+              <label>Secondary Property:</label>
+              <input [(ngModel)]="selectedPrefill.secondaryProperty"  type="text" class="form-control" />
+            </div>
+            <br>
+            <div class="form-group">
+              <label>Product:</label>
+              <input [(ngModel)]="selectedPrefill.product" type="text" class="form-control" />
+            </div>
+            <div class="form-group">
+              <label>Product category:</label>
+              <input [(ngModel)]="selectedPrefill.productCategory"  type="text" class="form-control" />
+            </div>
+            <div class="form-group">
+              <label>Product subcategory:</label>
+              <input [(ngModel)]="selectedPrefill.productSubCategory"  type="text" class="form-control" />
+            </div>
+            <div class="form-group">
+              <label>Product Description:</label>
+              <input [(ngModel)]="selectedPrefill.productDescription"  type="text" class="form-control" />
+            </div>
+          </div>
+          <div class="record-data">
+            <ul>
+              <li>
+                <div class="record-list">
+                  <label class="custom-checkbox custom-checkbox-rounded orange">
+                    <input type="checkbox" class="chkbox-input"  />
+                    <span class="label-checked"></span>
+                  </label>
+                  <span class="record-type">Record created</span>
+                  <span class="date">7/12/2023 - 9:45</span>
+                  <span class="status">JD</span>
+                  <span class="record-info"><i class="info-icon">i</i></span>
+                </div>
+              </li>
+              <li>
+                <div class="record-list">
+                  <label class="custom-checkbox custom-checkbox-rounded yellow">
+                    <input type="checkbox" class="chkbox-input" />
+                    <span class="label-checked"></span>
+                  </label>
+                  <span class="record-type">Data completed</span>
+                  <span class="date">&nbsp;</span>
+                  <span class="status">AM</span>
+                  <span class="record-info"><i class="info-icon">i</i></span>
+                </div>
+              </li>
+              <li>
+                <div class="record-list">
+                  <label class="custom-checkbox custom-checkbox-rounded blue">
+                    <input type="checkbox" class="chkbox-input" />
+                    <span class="label-checked"></span>
+                  </label>
+                  <span class="record-type">Team-outs done</span>
+                  <span class="date">7/12/2023 - 9:45</span>
+                  <span class="status">JD</span>
+                  <span class="record-info"><i class="info-icon">i</i></span>
+                </div>
+                <div class="record-list">
+                  <label class="custom-checkbox custom-checkbox-rounded green">
+                    <input type="checkbox" class="chkbox-input" />
+                    <span class="label-checked"></span>
+                  </label>
+                  <span class="record-type">Assets exported</span>
+                  <span class="date">7/12/2023 - 11:11</span>
+                  <span class="status">D</span>
+                  <span class="record-info"><i class="info-icon">i</i></span>
+                </div>
+                <div class="record-list">
+                  <label class="custom-checkbox custom-checkbox-rounded dark-pink">
+                    <input type="checkbox" class="chkbox-input" />
+                    <span class="label-checked"></span>
+                  </label>
+                  <span class="record-type">Submitted to league</span>
+                  <span class="date">&nbsp;</span>
+                  <span class="status">D/A</span>
+                  <span class="record-info"><i class="info-icon">i</i></span>
+                </div>
+              </li>
+              <li>
+                <div class="record-list">
+                  <label class="custom-checkbox custom-checkbox-rounded light-green">
+                    <input type="checkbox" class="chkbox-input" />
+                    <span class="label-checked"></span>
+                  </label>
+                  <span class="record-type">Licensing approved</span>
+                  <span class="date">&nbsp;</span>
+                  <span class="status">&nbsp;</span>
+                  <span class="record-info"><i class="info-icon">i</i></span>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="btn-holder btn-horizontal">
+          <button class="btn btn-round btn-white-border btn-color-red">Remove NFL</button>
+          <button class="btn btn-round btn-white-border">Submit to {{selectedOption}} for licensing</button>
+        </div>
+      </div>
+    </div>
+  </div>
